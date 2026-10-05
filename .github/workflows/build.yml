@@ -1,0 +1,24 @@
+name: Build iOS App
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    name: Build iOS Simulator App
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Xcode
+      uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: latest
+
+    - name: Build for Simulator
+      run: |
+        echo "Tutaj następuje kompilacja projektu w chmurze..."
+        # Wymaga pełnej struktury projektu Xcode (.xcodeproj)
